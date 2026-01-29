@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recetas para el cole</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Mis Recetas para el cole</h1>
+    <p>Elegí una receta Snacks/Lunch</p>
+  </header>
+
+ <div class="buscador">
+  <input
+    type="text"
+    id="buscador"
+    placeholder="Buscar receta..."
+    aria-label="Buscar receta"
+  />
+</div> 
+  
+  <main class="recetas-grid">
+
+    <script>
+      const recetas = [
+        { nombre: "Tofu", link: "https://i.ibb.co/KxVmrxVQ/Captura-de-pantalla-2026-01-29-121702.png" },
+        
+ { nombre: "Ensalada de fideos", link: "https://i.ibb.co/fVqR4fPv/Captura-de-pantalla-2026-01-29-130231.png" },
+        
+   { nombre: "Nuggets de pollo", link: "https://www.instagram.com/reel/DMG7fT4tlzJ/?igsh=MWl1dDhnaXFkejN6Zg==" },
+        
+   { nombre: " Wrap Soja", link: "https://i.ibb.co/W4Kmd8RS/Captura-de-pantalla-2026-01-29-131736.png" },
+        
+        { nombre: "Wrap Emi", link: "https://i.ibb.co/MDRwrFbW/Captura-de-pantalla-2026-01-29-124948.png" }, 
+         
+{ nombre: "Sandwich Pesto", link: "https://i.ibb.co/7JFwLcn7/Captura-de-pantalla-2026-01-29-124504.png" },
+        
+ { nombre: "Bowl Meditarraneo", link: "https://vt.tiktok.com/ZSax5yWba/" },
+        
+{ nombre: "Hamburguesa Veggie", link: "https://vt.tiktok.com/ZSax5Sf2D/" },
+        
+{ nombre: "Guiso de garbanzos", link: " https://www.instagram.com/reel/C32bAE0IjP3/?igsh=ejliMWU0enc1a2k3" },
+        
+ { nombre: "Ensalada de pepino", link: "https://vt.tiktok.com/ZSaxxkVaW/" },
+        
+  { nombre: "Pollo con papas", link: " https://vt.tiktok.com/ZSax4uPQc/" },
+        
+   { nombre: "Burrito", link: " https://vt.tiktok.com/ZSax4fck2/" },
+        
+   { nombre: "Pizza de avena", link: "https://vt.tiktok.com/ZSax4HASE/" },
+        
+    { nombre: "Sandwich Papa", link: "https://vt.tiktok.com/ZSax4v52G/" },
+        
+  { nombre: "Croquetas", link: " https://vt.tiktok.com/ZSax4oQKE/" },
+        
+ { nombre: "Hamburguesa Veggie 2", link: " https://vt.tiktok.com/ZSaxVkFsH/" },
+        
+ { nombre: "Risotto de verduras", link: " https://vt.tiktok.com/ZSaxVCW5c/" },
+        
+     { nombre: "Frittata", link: "https://vt.tiktok.com/ZSaxVD1Nv/" },
+        
+    { nombre: "Poke Bowl", link: "https://i.ibb.co/Mkv5XDvZ/Captura-de-pantalla-2026-01-29-142722.png" },
+        
+ { nombre: "Morrón relleno", link: "https://i.ibb.co/wZDjC4Dt/Captura-de-pantalla-2026-01-29-144307.png" },
+        
+  { nombre: "Risotto municiones", link: "https://vt.tiktok.com/ZSaxgeKGQ/" },
+        
+   { nombre: "Mini tartas", link: " https://vt.tiktok.com/ZSaxgm1w3/" },
+        
+ { nombre: "Dips", link: "https://vt.tiktok.com/ZSaxgfVQ6/" },
+        
+{ nombre: "Rolls de berenjena", link: "https://vt.tiktok.com/ZSaxpBg42/" },
+        
+  { nombre: "Pasta de palta", link: "https://vt.tiktok.com/ZSaxpBg42/" },
+        
+ { nombre: "Pasta con esparragos", link: "https://vt.tiktok.com/ZSaxpBg42/" },
+        
+  { nombre: "Faina con verdura", link: " https://vt.tiktok.com/ZSaxg44mp/" },
+        
+{ nombre: "Pizza pocket", link: " https://vt.tiktok.com/ZSaxgx7BE/" },
+        
+    { nombre: "Triángulos de espinaca", link: " https://vt.tiktok.com/ZSaxsBbnY/" },
+        
+ { nombre: "Pizza de brócoli", link: "https://vt.tiktok.com/ZSaxseLMo/" },
+        
+   { nombre: "Tarta de papa", link: "https://vt.tiktok.com/ZSaxs866P/" },
+        
+   { nombre: "Arrollados con *soja*", link: "https://vt.tiktok.com/ZSaxsPttQ/" },
+        
+ { nombre: "Tortillita", link: "https://vt.tiktok.com/ZSaxspBE9/" },
+        
+  { nombre: "Omelette", link: "https://www.instagram.com/reel/DOxHIkMDOQX/?igsh=OXh0ZjN1YnR3djFi" },
+        
+  { nombre: "Albóndigas de soja", link: "https://vt.tiktok.com/ZSaxGCHjS/" },
+        
+  { nombre: "Empanadas de soja", link: "https://vt.tiktok.com/ZSaxGBwRx/" },
+        
+     { nombre: "Medallones de soja", link: "https://vt.tiktok.com/ZSaxGhPdQ/" },
+        
+     { nombre: "Ensalada mamá", link: "https://i.ibb.co/Mx8f1Px0/Captura-de-pantalla-2026-01-29-154035.png" },
+        
+    { nombre: "Curry de hongos", link: "https://vt.tiktok.com/ZSaxtXjuX/" },
+        
+ { nombre: "Albondigas de repollo", link: "https://vt.tiktok.com/ZSaxtmRUY/" },
+        
+          { nombre: "Ensalada de garbanzos", link: "https://vt.tiktok.com/ZSaxt7WP8/" },
+        
+   { nombre: "Sushi balls", link: " https://vt.tiktok.com/ZSaxt7WP8/" },
+        
+   { nombre: "Bollos de acelga", link: "ttps://vt.tiktok.com/ZSaxt7WP8/" },
+        
+      { nombre: "Ensalada de repollo", link: "https://vt.tiktok.com/ZSaxtv1g4/" },
+        
+  { nombre: "Rolls de zucchini/pepino", link: "https://vt.tiktok.com/ZSaxnfmNV/" },
+        
+          { nombre: "Risotto de zapallo", link: " https://vt.tiktok.com/ZSaxnr2Qe/" },
+        
+     { nombre: "Canastitas", link: "https://vt.tiktok.com/ZSaxnuE7Y/" },
+        
+     { nombre: "Pastel de verduras", link: "https://vt.tiktok.com/ZSaxnmUAE/" },
+        
+    { nombre: "Pizza de vegetales", link: " https://vt.tiktok.com/ZSaxnk2F7/" },
+        
+  {nombre: "Crepes de espinaca", link: " https://vt.tiktok.com/ZSaxnTGGA/" },
+        
+   { nombre: "Galletas de Avena", link: "https://i.ibb.co/mVxdDYNP/Captura-de-pantalla-2026-01-29-122214.png" },
+        
+   { nombre: "Pan de Garbanzos", link: "https://www.instagram.com/reel/DAPFEGVPlxC/?igsh=anBibGNtcmVtNTlq" },
+        
+   { nombre: "Budín de Limón", link: "https://www.infobae.com/tendencias/2024/07/03/receta-de-budin-de-limon-rapida-y-facil/" },
+        
+   { nombre: "Budín de Banana", link: "https://trestenedoresblog.blogspot.com/2017/07/budin-de-banana.html#google_vignette" },
+        
+    { nombre: "Barritas", link: " https://vt.tiktok.com/ZSaxxsaPu/" },
+        
+    { nombre: "Bananita Dolca", link: "https://i.ibb.co/B51yh9tM/Captura-de-pantalla-2026-01-29-130345.png" },
+        
+    { nombre: "Bizcochos Queso", link: " https://vt.tiktok.com/ZSax95GaD/" },
+  
+   { nombre: "Banana cups", link: " https://vt.tiktok.com/ZSaxWNamg/" },
+        
+   { nombre: "Trufas", link: " https://vt.tiktok.com/ZSaxWqKpC/" },
+      
+  { nombre: "Grisines de avena", link: "https://vt.tiktok.com/ZSaxWafyJ/" },
+        
+   { nombre: "Tortita de choco", link: " https://vt.tiktok.com/ZSaxWxLLA/" },
+        
+   {nombre: "Waffles", link: "https://vt.tiktok.com/ZSaxWa28m/" },
+        
+ { nombre: "Pancitos Emi", link: "https://vt.tiktok.com/ZSaxW71xb/" },
+        
+     { nombre: "Bizcochitos", link: "https://vt.tiktok.com/ZSaxWnET9/" },
+        
+     { nombre: "Donuts", link: " https://vt.tiktok.com/ZSaxWcbja/" },
+        
+    { nombre: "Muffins", link: " https://vt.tiktok.com/ZSaxW5yjW/" },
+        
+  {nombre: "Papitas", link: " https://vt.tiktok.com/ZSaxWEswN/" },
+        
+   { nombre: "Trufas choco", link: "https://vt.tiktok.com/ZSax7kmJB/" },
+        
+   { nombre: "Bocaditos de frutilla", link: "https://vt.tiktok.com/ZSaxWodc5/" },
+        
+        { nombre: "Chips vegetales", link: " https://vt.tiktok.com/ZSax7kB1K/" },
+      
+      ];
+
+      const contenedor = document.currentScript.parentElement;
+
+      recetas.forEach((receta, index) => {
+       const a = document.createElement("a");
+a.href = receta.link;
+a.target = "_blank";
+a.rel = "noopener noreferrer";
+a.className = "receta";
+        a.innerHTML = `
+          <span>Receta ${index + 1}</span>
+          <h2>${receta.nombre}</h2>
+        `;
+        contenedor.appendChild(a);
+      });
+      
+      const inputBuscador = document.getElementById("buscador");
+
+inputBuscador.addEventListener("input", () => {
+  const texto = inputBuscador.value.toLowerCase();
+
+  document.querySelectorAll(".receta").forEach((receta) => {
+    const nombre = receta.querySelector("h2").textContent.toLowerCase();
+    receta.style.display = nombre.includes(texto) ? "block" : "none";
+  });
+});
+
+    </script>
+
+  </main>
+
+  <footer>
+    <p>© 2026 · Recetas hechas con amor</p>
+  </footer>
+
+</body>
+</html>
